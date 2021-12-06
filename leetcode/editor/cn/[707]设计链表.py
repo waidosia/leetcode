@@ -43,6 +43,7 @@ class ListNode:
         self.val = val
         self.next = None
 
+
 class MyLinkedList:
 
     def __init__(self):
@@ -52,16 +53,14 @@ class MyLinkedList:
     def get(self, index: int) -> int:
         if 0 <= index < self._count:
             node = self._head
-            for _ in range(index+1):
+            for _ in range(index + 1):
                 node = node.next
             return node.val
         else:
             return -1
 
-
     def addAtHead(self, val: int) -> None:
-        self.addAtIndex(0,val)
-
+        self.addAtIndex(0, val)
 
     def addAtTail(self, val: int) -> None:
         self.addAtIndex(self._count, val)
@@ -80,7 +79,6 @@ class MyLinkedList:
         else:
             prev_node.next, add_node.next = add_node, current_node
 
-
     def deleteAtIndex(self, index: int) -> None:
         if 0 <= index < self._count:
             # 计数-1
@@ -90,9 +88,6 @@ class MyLinkedList:
                 prev_node, current_node = current_node, current_node.next
             else:
                 prev_node.next, current_node.next = current_node.next, None
-
-
-
 
 # Your MyLinkedList object will be instantiated and called as such:
 # obj = MyLinkedList()
