@@ -59,8 +59,7 @@ class Solution:
         for i in range(len(nums)):
             Sum = Sum + nums[i]
             while Sum >= target:
-                # print(sublen)
-                # print(i - index + 1)
+
                 sublen = min(sublen, i - index + 1)
                 Sum -= nums[index]
                 index += 1
