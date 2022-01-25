@@ -7,9 +7,9 @@
 //
 //输入：root = [1,null,2,3]
 //输出：[3,2,1]
-//
-//
 // 示例 2：
+//
+//
 //
 //
 //输入：root = []
@@ -50,13 +50,13 @@ package main
 
 func postorderTraversal(root *TreeNode) (res []int) {
 	var traversal func(node *TreeNode)
-	traversal = func(node *TreeNode){
-		if node == nil{
+	traversal = func(node *TreeNode) {
+		if node == nil {
 			return
 		}
 		traversal(node.Left)
 		traversal(node.Right)
-		res = append(res,node.Val)
+		res = append(res, node.Val)
 	}
 	traversal(root)
 	return res
