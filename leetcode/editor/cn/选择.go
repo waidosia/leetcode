@@ -2,8 +2,7 @@ package main
 
 import "fmt"
 
-func selectionSort(nums []int) {/''
-
+func selectionSort(nums []int) {
 
 	for i := 0; i < len(nums)-1; i++ {
 		minIndex := i
