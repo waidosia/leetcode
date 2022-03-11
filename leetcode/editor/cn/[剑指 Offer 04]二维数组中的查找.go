@@ -38,7 +38,21 @@ package main
 
 //leetcode submit region begin(Prohibit modification and deletion)
 func findNumberIn2DArray(matrix [][]int, target int) bool {
-
+	if matrix == nil || len(matrix) == 0 || len(matrix[0]) == 0 {
+		return false
+	}
+	rows, cols := len(matrix), len(matrix[0])
+	r, c := 0, cols-1
+	for r < rows && c >= 0 {
+		if target == matrix[r][c] {
+			return true
+		} else if target > matrix[r][c] {
+			r++
+		} else {
+			c--
+		}
+	}
+	return false
 }
 
 //leetcode submit region end(Prohibit modification and deletion)

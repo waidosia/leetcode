@@ -46,16 +46,14 @@
 package main
 
 func twoSum(nums []int, target int) []int {
-	recode := make(map[int]int)
-	for i, j := range nums {
-		if p, ok := recode[target-j]; ok {
-			return []int{p, i}
+	m := make(map[int]int)
+	for index, value := range nums {
+		if i, ok := m[target-value]; ok {
+			return []int{index, i}
 		} else {
-			recode[j] = i
+			m[value] = index
 		}
-
 	}
-	return nil
 }
 
 //leetcode submit region end(Prohibit modification and deletion)
